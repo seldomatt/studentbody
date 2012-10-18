@@ -29,7 +29,9 @@ github TEXT,
 code_school TEXT,
 coder_wall TEXT,
 stack_overflow TEXT,
-treehouse TEXT
+treehouse TEXT,
+githubfeed TEXT,
+twitterfeed TEXT
 );
 SQL
 
@@ -93,6 +95,8 @@ profile_links.each do |link|
 		coder_wall = doc.css('a[href*="coderwall"]')[0]["href"]
 		stack_overflow = doc.css('a[href*="stack"]')[0]["href"]
 		treehouse = doc.css('a[href*="treehouse"]')[0]["href"]
+		githubfeed = doc.css('.one_half')[0].inner_html
+		twitterfeed = doc.css('.one_half')[1].inner_html
 
 		images.each do |imagearray|
 			if imagearray[0] == image_class
@@ -121,5 +125,7 @@ profile_links.each do |link|
 																			code_school, 
 																			coder_wall, 
 																			stack_overflow, 
-																			treehouse) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", first_name, last_name, image_class, email, tag_line, bio, app_1, app_1_desc, app_2, app_2_desc, app_3, app_3_desc, linked_in, blog, twitter, github, code_school, coder_wall, stack_overflow, treehouse)
+																			treehouse,
+																			githubfeed,
+																			twitterfeed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", first_name, last_name, image_class, email, tag_line, bio, app_1, app_1_desc, app_2, app_2_desc, app_3, app_3_desc, linked_in, blog, twitter, github, code_school, coder_wall, stack_overflow, treehouse, githubfeed, twitterfeed)
 end

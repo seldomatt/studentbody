@@ -131,7 +131,7 @@ div.corinna-profile-photo img { margin:0; padding: 0; }
 .davidbaker-profile-photo {
 height: 200px;
 width: 200px;
-background: url(../images/davidbaker-profile.jpg) no-repeat 0 0;
+background: url(/images/davidbaker-profile.jpg) no-repeat 0 0;
 }
 
 .matz-profile-photo {
