@@ -5,8 +5,9 @@
   <title>Flatiron School - Students</title>
   <link href="/style.css" type="text/css" rel="stylesheet">
   <link href="/matz.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="js/libs/jquery-1.4.3.min.js"></script>
-  <script type="text/javascript" src="js/libs/modernizr-1.7.min.js"></script>
+  <script id="twitter-wjs" src="http://platform.twitter.com/widgets.js"></script>
+  <script type="text/javascript" src="/js/libs/jquery-1.4.3.min.js"></script>
+  <script type="text/javascript" src="/js/libs/modernizr-1.7.min.js"></script>
 </head>
 
 <body>
@@ -65,13 +66,13 @@
 
 
 <div class="one_third">
-<h4>Zite</h4>
-<p>Awesome news app that let's me jump from browsing Henry Miller quotes to reading about lambda calculus on the fly, slowly tailors to your tastes by tracking your 'likes' - daily reading for the ADD generation </p>
+<h4><%= @student["app_2"] %></h4>
+<p><%= @student["app_2_desc"] %></p>
 </div>
 
 <div class="one_third last">
-<h4>Twitter</h4>
-<p>The social networking platform that best approximates real-life.  Get to know someone through their sharing random thoughts, opinions, and minutiae.  Like old times...</p>
+<h4><%= @student["app_3"] %></h4>
+<p><%= @student["app_3_desc"] %></p>
 </div>
 
 
@@ -86,11 +87,11 @@
 
           <div class="columns">
           <div class="coder-cred">
-            <div class="one_fifth"><a href="http://github.com/seldomatt"><div class="cred-github"></div></a></div>
-            <div class="one_fifth"><a href="http://www.codeschool.com/users/168928"><div class="cred-codeschool"></div></a></div>
-            <div class="one_fifth"><a href="http://coderwall.com/seldomatt"><div class="cred-coderwall"></div></a></div>
-            <div class="one_fifth"><a href="http://stackoverflow.com/users/1647714/seldomatt"><div class="cred-stackoverflow"></div></a></div>
-            <div class="one_fifth last"><a href="http://teamtreehouse.com/matthewsalerno"><div class="cred-treehouse"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student["github"] %>><div class="cred-github"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student["code_school"] %>><div class="cred-codeschool"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student["coder_wall"] %>><div class="cred-coderwall"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student["stack_overflow"] %>><div class="cred-stackoverflow"></div></a></div>
+            <div class="one_fifth last"><a href=<%= @student["treehouse"] %>><div class="cred-treehouse"></div></a></div>
           </div>
           </div>
 
@@ -101,13 +102,7 @@
 
         <div class="one_half">
 
-          <h2> Github Feed</h2>
-
-            <script language="JavaScript" src="http://itde.vccs.edu/rss2js/feed2js.php?src=https%3A%2F%2Fgithub.com%2Fseldomatt.atom&chan=y&num=7&desc=1&date=y&targ=y" type="text/javascript"></script>
-
-              <noscript>
-              <a href="http://itde.vccs.edu/rss2js/feed2js.php?src=https%3A%2F%2Fgithub.com%2Fseldomatt.atom&chan=y&num=7&desc=1&date=y&targ=y&html=y">View RSS feed</a>
-              </noscript>
+          <%= @student["githubfeed"] %>
 
         </div>
 
