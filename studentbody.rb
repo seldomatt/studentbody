@@ -1,5 +1,6 @@
 require 'sinatra'
-# require 'sqlite3'
+require 'sqlite3'
+require 'fileutils'
 
 class StudentBody < Sinatra::Base
 
@@ -8,6 +9,16 @@ class Student
 
   @@students = [{:id => 1, :name => "matt", :email => "seldomatt@gmail.com"},
                           {:id => 2, :name => "li", :email => "li.ouyang@gmail.com"}]
+
+   @db = SQLite3::Database.open('pickpokit.db')
+   # puts @db.execute("select * from students")
+
+  # def import
+  #   @db.execute("SELECT id, first_name FROM students") do |row|
+  #       @@students[:student][:id] = row[0]
+  #       @@students[:student][:first_name] = row[1]
+  #   end
+  # end
 
   def initialize(id, name, email)
     @id = id

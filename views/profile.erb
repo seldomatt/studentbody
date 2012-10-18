@@ -1,13 +1,117 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Student Body app</title>
-<!--     <link href="style.css" rel="stylesheet" /> -->
-  </head>
-<body>
-<h1><%= @student[:name] %></h1>
- <h2><%= @student[:id] %></h2>
-<h3><%= @student[:email] %></h3>
-</body>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Flatiron School - Developing Professionals</title>
 
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<link type="text/plain" rel="lol" href="/humans.lol/">
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/prettyPhoto.css" type="text/css" rel="stylesheet">
+<link href="css/tipsy.css" type="text/css" rel="stylesheet">
+<link href="css/liouyang.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="js/libs/modernizr-1.7.min.js"></script>
+<script type="text/javascript" src="js/libs/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="js/libs/jquery.easing.1.2.js"></script>
+<script type="text/javascript" src="js/libs/jquery.visualNav.min.js"></script>
+<script type="text/javascript" src="js/libs/jquery.tipsy.js"></script>
+
+</head>
+
+<body>
+<div id="page">
+  <header id="header">
+    <div class="center">
+      <nav id="main-menu">
+        <ul>
+          <li class="site-title" style="font-size: 3em; padding-bottom: 10px">The Flatiron School</li>
+        </ul>
+
+        <ul>
+          <li><a class="menu" href="http://flatironschool.com/#home">About</a></li>
+          <li><a class="menu" href="http://flatironschool.com/#program">The Program</a></li>
+          <li><a class="menu" href="http://flatironschool.com/#profile">Graduate Profile</a></li>
+          <li><a class="menu" href="http://flatironschool.com/#sponsor">Get Involved</a></li>
+          <li><a href="http://eepurl.com/nTXCr" target="_blank" style="color: red">&#10029; Apply &#10029;</a></li>
+          <li><a class="menu" href="http://flatironschool.com/#people">Our People</a></li>
+          <li><a class="menu" href="http://flatironschool.com/#faq">FAQ</a></li>
+          <li><a class="menu" href="http://flatironschool.com/#contact">Get In Touch</a></li>
+          <li><a href="http://blog.flatironschool.com">Weblog</a></li>
+        </ul>
+      </nav>
+      <ul id="filter" class="mobile-ipad-menu">
+        <li id="top"><a class="top-link">Home</a>
+          <ul id="controls">
+            <li><a href="http://eepurl.com/nTXCr" class="visualNav menu">Apply</a></li>
+            <li><a href="http://flatironschool.com/#home" class="visualNav menu">About</a>
+            <!-- <li><a href="http://flatironschool.com/#philosophy" class="visualNav">Philosophy</a></li> -->
+            <li><a href="http://flatironschool.com/#program" class="visualNav menu">The Program</a></li>
+            <li><a href="http://flatironschool.com/#sponsor" class="visualNav">Get Involved</a></li>
+            <li><a href="http://flatironschool.com/#faq" class="visualNav">FAQ</a></li>
+            <li><a href="http://flatironschool.com/#people" class="visualNav menu">Our People</a></li>
+            <li><a href="http://flatironschool.com/#contact" class="visualNav menu">Get In Touch</a></li>
+            <li><a href="http://blog.flatironschool.com">Weblog</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="clear"></div>
+    </div>
+  </header>
+
+  <section id="about" class="about-us content" style="margin-top: 34px">
+
+        <div class="jrcolumns">
+
+          <!-- LEFT COLUMN -->
+
+
+
+           <div class="one_third" id="sprite">
+            <nav id='side-nav'>
+              <ul>
+                <li class='twitter'><a href='http://www.twitter.com/styliii' target="_blank">Twitter</a></li>
+                <li class='facebook'><a href='http://www.facebook.com/li.ouyang' target="_blank">Facebook</a></li>
+                <li class='github'><a href='https://github.com/styliii' target="_blank">Github</a></li>
+                <li class='linkedin'><a href='http://www.linkedin.com/pub/li-ouyang/1/ab2/385' target="_blank">Linkedin</a></li>
+                <li class='stack'><a href='http://stackoverflow.com/users/1400186/styliii' target="_blank">Stack Overflow</a></li>
+                <li class='blog'><a href='http://afternoon-depths-6297.herokuapp.com/' target="_blank">Blog</a></li>
+              </ul>
+            </nav> <!-- this is the end of side nav -->
+          </div>
+                 <!-- MIDDLE COLUMN -->
+
+
+          <div class="one_third">
+            <h1>Li Ouyang</h1>
+
+
+            <p>Back in April of 2012, I decided to take a Ruby on Rails class with Avi-sensei through Skillshare. It was an attempt to not look stupid, but turned out to be an inspiration filled class. It’s like when you went to the playground with your starter lego set, but then all the other kids were building castles and forts. It made you want to do the same because you just knew in your gut you could ... if only you had more legos!</p>
+
+            <p>Fast forward to the beginning of Flatiron School, Fall Semester 2012.  I now have a stackoverflow account.  My eyes don't glaze over when CSS is mentioned.  Javascript doesn't sound like a beast, but a necessary tool to learn.  Moreover, I'm excited to absorb (hopefully through osmosis) and become a full fledged developer, Ruby on Rails ninja.</p>
+
+            <p>Hailing from New Hampshire, I studied Economics and Mathematics at Tufts University (Go Jumbos!).  Then, moved straight to NYC to join the ranks of Wall Street.  Had a helluva time spending seven years on a trading floor, learning about risk/reward, markets and how money doesn't bring true happiness.  Then banking regulation reset the rules and prop trading at a bank could no longer be my bread and butter.  </p>
+
+            <p>If you can pull me away from my laptop, I'm often practicing yoga, chain watching a tv series, or boogeying on the dance floor.</p>
+          </div>
+            <!-- RIGHT COLUMN -->
+                 <div id="right_col" class="one_third last">
+
+            <img src="images/li_ouyang.jpg" alt="Sample Image" width="200px">
+
+            <!-- TWITTER WIDGET BEGIN-->
+            <a class="twitter-timeline" href="https://twitter.com/styliii" data-widget-id="253165208636362752">Tweets by @styliii</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+            <!-- TWITTER WIDGET END-->
+
+          </div>
+
+        </div>
+    </div>
+  </section>
+</body>
 </html>
