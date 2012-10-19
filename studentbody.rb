@@ -4,8 +4,8 @@ require 'fileutils'
 
 class StudentBody < Sinatra::Base 
 
-  get '/:id' do 
-    @student = Student.find(params[:id])
+  get '/:fullname' do 
+    @student = Student.find(params[:fullname])
     erb :profile
   end
 
@@ -29,10 +29,11 @@ class StudentBody < Sinatra::Base
     end
 
     
-    def self.find(id)
+    def self.find(fullname)
+      first_name, last_name = fullname.split("-",2)
       student = Student.new
       @db.results_as_hash = true
-      result = @db.execute("SELECT * FROM students WHERE id = #{id}")[0]
+      result = @db.execute("SELECT * FROM students WHERE first_name = '#{first_name.capitalize}' AND last_name = '#{last_name.capitalize}'")[0]
       @@attributes.each do |attribute|
         student.send("#{attribute}=", result[attribute.to_s])
       end
