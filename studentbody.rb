@@ -11,20 +11,32 @@ class StudentBody < Sinatra::Base
 
 
   class Student
-    attr_accessor :id, :name, :email
 
-    @@students = [{:id => 1, :name => "Matt", :email => "matthewsalern@gmail.com"}, 
-                  {:id => 2, :name => "Li", :email => "li.ouyang@gmail.com"}]
+    
 
     @db = SQLite3::Database.open('db/studentbody.db')
 
-    def self.all
-      @@students
+    @db.results_as_hash = true
+    
+    keys = @db.execute("SELECT * FROM students").first.map do |key, value|
+      key.to_sym if key.class == String
     end
 
+    @@attributes = keys.compact!
+    
+    @@attributes.each do |attribute|
+      attr_accessor attribute
+    end
+
+    
     def self.find(id)
+      student = Student.new
       @db.results_as_hash = true
-      @db.execute("SELECT * FROM students WHERE id = #{id}")[0]
+      result = @db.execute("SELECT * FROM students WHERE id = #{id}")[0]
+      @@attributes.each do |attribute|
+        student.send("#{attribute}=", result[attribute.to_s])
+      end
+      student
     end
   
   end

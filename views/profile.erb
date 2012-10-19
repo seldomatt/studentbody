@@ -36,43 +36,43 @@
 
 
 
-<div class=<%= @student["image_class"] %>>
+<div class=<%= @student.image_class %>>
   <img src="images/circle-mask.png"/>
 </div>
 
 
 <nav id='side-nav'>
               <ul>
-                <li class='mail'><a href="mailto:<%= @student["email"] %>">Mail</a></li>
-                <li class='blog'><a href=<%= @student["blog"] %>>Blog</a></li>
-                <li class='linkedin'><a href=<%= @student["linked_in"] %>>LinkedIn</a></li>
-                <li class='twitter'><a href=<%= @student["twitter"] %>>Twitter</a></li>
+                <li class='mail'><a href="mailto:<%= @student.email %>">Mail</a></li>
+                <li class='blog'><a href=<%= @student.blog %>>Blog</a></li>
+                <li class='linkedin'><a href=<%= @student.linked_in %>>LinkedIn</a></li>
+                <li class='twitter'><a href=<%= @student.twitter %>>Twitter</a></li>
               </ul>
             </nav> <!-- this is the end of side nav -->
           </div>
           <!-- MIDDLE COLUMN -->
           <div class="two_third">
-            <h1><%= @student["first_name"] + " " + @student["last_name"] %></h1>
-            <h2 id='tagline'><%= @student["tag_line"] %></h2>
-            <p><%= @student["bio"] %></p>
+            <h1><%= @student.first_name + " " + @student.last_name %></h1>
+            <h2 id='tagline'><%= @student.tag_line %></h2>
+            <p><%= @student.bio %></p>
 
 <br/><br/>
             <h2 id='tagline'>My favorite apps</h2>
 
 <div class="one_third">
-<h4><%= @student["app_1"]%></h4>
-<p><%= @student["app_1_desc"] %></p>
+<h4><%= @student.app_1 %></h4>
+<p><%= @student.app_1_desc %></p>
 </div>
 
 
 <div class="one_third">
-<h4><%= @student["app_2"] %></h4>
-<p><%= @student["app_2_desc"] %></p>
+<h4><%= @student.app_2 %></h4>
+<p><%= @student.app_2_desc %></p>
 </div>
 
 <div class="one_third last">
-<h4><%= @student["app_3"] %></h4>
-<p><%= @student["app_3_desc"] %></p>
+<h4><%= @student.app_3 %></h4>
+<p><%= @student.app_3_desc %></p>
 </div>
 
 
@@ -87,11 +87,11 @@
 
           <div class="columns">
           <div class="coder-cred">
-            <div class="one_fifth"><a href=<%= @student["github"] %>><div class="cred-github"></div></a></div>
-            <div class="one_fifth"><a href=<%= @student["code_school"] %>><div class="cred-codeschool"></div></a></div>
-            <div class="one_fifth"><a href=<%= @student["coder_wall"] %>><div class="cred-coderwall"></div></a></div>
-            <div class="one_fifth"><a href=<%= @student["stack_overflow"] %>><div class="cred-stackoverflow"></div></a></div>
-            <div class="one_fifth last"><a href=<%= @student["treehouse"] %>><div class="cred-treehouse"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student.github %>><div class="cred-github"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student.code_school %>><div class="cred-codeschool"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student.coder_wall %>><div class="cred-coderwall"></div></a></div>
+            <div class="one_fifth"><a href=<%= @student.stack_overflow %>><div class="cred-stackoverflow"></div></a></div>
+            <div class="one_fifth last"><a href=<%= @student.treehouse %>><div class="cred-treehouse"></div></a></div>
           </div>
           </div>
 
@@ -102,15 +102,13 @@
 
         <div class="one_half">
 
-          <%= @student["githubfeed"] %>
+          <%= @student.githubfeed %>
 
         </div>
 
         <div class="one_half last">
 
-            <a class="twitter-timeline" href="https://twitter.com/seldomatt" data-widget-id="253170126512332801">Tweets by @seldomatt</a>
-                              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                              </script>
+            <%= @student.twitterfeed %>
 
         </div>
       <div class="clear"></div>
