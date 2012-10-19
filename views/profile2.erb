@@ -36,43 +36,43 @@
 
 
 
-<div class=<%= @student.image_class %>>
+<div class=<%= @student["image_class"] %>>
   <img src="images/circle-mask.png"/>
 </div>
 
 
 <nav id='side-nav'>
               <ul>
-                <li class='mail'><a href="mailto:<%= @student.email %>">Mail</a></li>
-                <li class='blog'><a href=<%= @student.blog %>>Blog</a></li>
-                <li class='linkedin'><a href=<%= @student.linked_in %>>LinkedIn</a></li>
-                <li class='twitter'><a href=<%= @student.twitter %>>Twitter</a></li>
+                <li class='mail'><a href="mailto:<%= @student["email"] %>">Mail</a></li>
+                <li class='blog'><a href=<%= @student["blog"] %>>Blog</a></li>
+                <li class='linkedin'><a href=<%= @student["linked_in"] %>>LinkedIn</a></li>
+                <li class='twitter'><a href=<%= @student["twitter"] %>>Twitter</a></li>
               </ul>
             </nav> <!-- this is the end of side nav -->
           </div>
           <!-- MIDDLE COLUMN -->
           <div class="two_third">
-            <h1><%= @student.first_name + " " + @student.last_name %></h1>
-            <h2 id='tagline'><%= @student.tag_line %></h2>
-            <p><%= @student.bio %></p>
+            <h1><%= @student["first_name"] + " " + @student["last_name"] %></h1>
+            <h2 id='tagline'><%= @student["tag_line"] %></h2>
+            <p><%= @student["bio"] %></p>
 
 <br/><br/>
             <h2 id='tagline'>My favorite apps</h2>
 
 <div class="one_third">
-<h4><%= @student.app_1 %></h4>
-<p><%= @student.app_1_desc %></p>
+<h4><%= @student["app_1"]%></h4>
+<p><%= @student["app_1_desc"] %></p>
 </div>
 
 
 <div class="one_third">
-<h4><%= @student.app_2 %></h4>
-<p><%= @student.app_2_desc %></p>
+<h4>Zite</h4>
+<p>Awesome news app that let's me jump from browsing Henry Miller quotes to reading about lambda calculus on the fly, slowly tailors to your tastes by tracking your 'likes' - daily reading for the ADD generation </p>
 </div>
 
 <div class="one_third last">
-<h4><%= @student.app_3 %></h4>
-<p><%= @student.app_3_desc %></p>
+<h4>Twitter</h4>
+<p>The social networking platform that best approximates real-life.  Get to know someone through their sharing random thoughts, opinions, and minutiae.  Like old times...</p>
 </div>
 
 
@@ -87,13 +87,11 @@
 
           <div class="columns">
           <div class="coder-cred">
-
-            <div class="one_fifth"><a href=<%= @student.github %>><div class="cred-github"></div></a></div>
-            <div class="one_fifth"><a href=<%= @student.code_school %>><div class="cred-codeschool"></div></a></div>
-            <div class="one_fifth"><a href=<%= @student.coder_wall %>><div class="cred-coderwall"></div></a></div>
-            <div class="one_fifth"><a href=<%= @student.stack_overflow %>><div class="cred-stackoverflow"></div></a></div>
-            <div class="one_fifth last"><a href=<%= @student.treehouse %>><div class="cred-treehouse"></div></a></div>
-
+            <div class="one_fifth"><a href="http://github.com/seldomatt"><div class="cred-github"></div></a></div>
+            <div class="one_fifth"><a href="http://www.codeschool.com/users/168928"><div class="cred-codeschool"></div></a></div>
+            <div class="one_fifth"><a href="http://coderwall.com/seldomatt"><div class="cred-coderwall"></div></a></div>
+            <div class="one_fifth"><a href="<%= @student["stack_overflow"] %>"><div class="cred-stackoverflow"></div></a></div>
+            <div class="one_fifth last"><a href="http://teamtreehouse.com/matthewsalerno"><div class="cred-treehouse"></div></a></div>
           </div>
           </div>
 
@@ -103,15 +101,10 @@
 
 
         <div class="one_half">
-
-          <%= @student.githubfeed %>
-
+            <%= @student["githubfeed"] %>
         </div>
         <div class="one_half last">
-
-
-            <%= @student.twitterfeed %>
-
+            <%= @student["twitterfeed"] %>
 
         </div>
       <div class="clear"></div>
