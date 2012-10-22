@@ -33,6 +33,16 @@ treehouse TEXT,
 githubfeed TEXT,
 twitterfeed TEXT
 );
+
+CREATE table indexstudents
+( id INTEGER PRIMARY KEY, 
+	full_name TEXT, 
+	tagline TEXT, 
+	image_url TEXT,
+	page_link TEXT,
+	excerpt TEXT
+	);
+
 SQL
 
 db.execute_batch( sql )
@@ -47,6 +57,23 @@ doc = Nokogiri::HTML(open(urlnoki))
 doc.css('div.one_third a').map do |link| 
   profile_links << urlnoki + link['href']
 end
+doc.css('div.one_third').each do |studentelement|
+	full_name = studentelement.search("h2").inner_text
+	tagline = studentelement.search(".position").inner_text
+	image_url = studentelement.search("img.person").first['src']
+	page_link = studentelement.search("a").first['href']
+	excerpt = studentelement.search(".excerpt").inner_text
+
+	db.execute("INSERT into indexstudents (full_name,
+																					tagline, 
+																					image_url, 
+																					page_link, 
+																					excerpt) VALUES (?, ?, ?, ?, ?)", full_name, tagline, image_url, page_link, excerpt)
+
+
+end
+
+
 # doc.css('div.one_third.last a').map do |link| 
 #   profile_links << urlnoki + link['href']
 # end
