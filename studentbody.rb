@@ -4,6 +4,10 @@ require 'fileutils'
 
 class StudentBody < Sinatra::Base 
 
+  get '/' do
+    erb :index
+  end
+
   get '/:fullname' do 
     @student = Student.find(params[:fullname])
     erb :profile
