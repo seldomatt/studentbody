@@ -5,7 +5,7 @@ require 'fileutils'
 class StudentBody < Sinatra::Base 
 
   get '/' do
-    @indexed_students
+    @indexed_students = Student.all
     erb :index
   end
 
@@ -23,7 +23,7 @@ class StudentBody < Sinatra::Base
 
     @db.results_as_hash = true
     
-    keys = @db.execute("SELECT * FROM students").first.map do |key, value|
+    keys = @db.execute("SELECT * FROM students INNER JOIN indexstudents ON students.last_name = indexstudents.last_name").first.map do |key, value|
       key.to_sym if key.class == String
     end
 
@@ -42,8 +42,28 @@ class StudentBody < Sinatra::Base
       @@attributes.each do |attribute|
         student.send("#{attribute}=", result[attribute.to_s])
       end
-      student
+        student
     end
+
+    def self.all
+      #get every row from database, convert into object, put into array to pass into view
+      @db.results_as_hash = true
+      result = @db.execute("SELECT * FROM indexstudents")
+      allstudents =[]
+      result.each do |result|
+        student = Student.new
+        student.excerpt = result["excerpt"]
+        student.tagline = result["tagline"]
+        student.first_name = result["first_name"]
+        student.last_name = result["last_name"]
+        student.image_url = result["image_url"]
+        student.page_link = result["page_link"]
+        allstudents << student
+      end    
+      allstudents
+    end      
+
+
   
   end
 
