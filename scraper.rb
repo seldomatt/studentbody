@@ -36,7 +36,8 @@ twitterfeed TEXT
 
 CREATE table indexstudents
 ( id INTEGER PRIMARY KEY, 
-	full_name TEXT, 
+	first_name TEXT,
+	last_name TEXT, 
 	tagline TEXT, 
 	image_url TEXT,
 	page_link TEXT,
@@ -59,16 +60,18 @@ doc.css('div.one_third a').map do |link|
 end
 doc.css('div.one_third').each do |studentelement|
 	full_name = studentelement.search("h2").inner_text
+	first_name, last_name = full_name.split
 	tagline = studentelement.search(".position").inner_text
 	image_url = studentelement.search("img.person").first['src']
 	page_link = studentelement.search("a").first['href']
 	excerpt = studentelement.search(".excerpt").inner_text
 
-	db.execute("INSERT into indexstudents (full_name,
+	db.execute("INSERT into indexstudents (first_name,
+																					last_name, 
 																					tagline, 
 																					image_url, 
 																					page_link, 
-																					excerpt) VALUES (?, ?, ?, ?, ?)", full_name, tagline, image_url, page_link, excerpt)
+																					excerpt) VALUES (?, ?, ?, ?, ?, ?)", first_name, last_name, tagline, image_url, page_link, excerpt)
 
 
 end
