@@ -5,6 +5,7 @@ require 'fileutils'
 class StudentBody < Sinatra::Base 
 
   get '/' do
+    @indexed_students
     erb :index
   end
 
