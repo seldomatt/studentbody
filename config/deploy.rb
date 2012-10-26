@@ -1,7 +1,7 @@
 set :application, "studentbody"
 set :repository,  "git@github.com:seldomatt/studentbody.git"
-set :user, "mattsalerno"
-set :deploy_to "/home/#{user}/#{application}"
+set :user, 'mattsalerno'
+set :deploy_to "/home/#{ user }/#{ application }"
 set :use_sudo, false
 
 set :scm, :git
