@@ -1,2 +1,3 @@
-require 'sqlite3'
-require 'sinatra'
+gem 'sqlite3'
+gem 'sinatra'
+gem 'nokogiri'
