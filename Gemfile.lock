@@ -1,6 +1,5 @@
 GEM
   specs:
-    nokogiri (1.5.5)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -15,6 +14,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri
   sinatra
   sqlite3
